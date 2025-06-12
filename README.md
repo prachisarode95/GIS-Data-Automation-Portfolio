@@ -32,12 +32,50 @@ Welcome to my **6-day portfolio project**, where I showcase hands-on projects in
 
 ## 📁 Folder Overview
 
-Each folder contains:
-- ✅ `README.md`: Step-by-step project guide
-- 📂 `datasets/`: Real-world shapefiles or rasters
-- 🔧 Code or SQL queries
-- 📸 Output screenshots
-
+```
+GIS_Data_Automation_Portfolio/
+├── README.md  # Master overview
+├── datasets/  # Shared datasets
+│   ├── sample_villages.shp
+│   ├── sentinel_ndvi.tif
+│   └── roads.geojson
+│
+├── Day1_Advanced_Spatial_SQL/
+│   ├── README.md
+│   └── SQL_queries.sql
+│
+├── Day2_Python_ETL_Shapefile_Raster/
+│   ├── README.md
+│   ├── shapefile_etl.py
+│   └── raster_batch_processor.py
+│
+├── Day3_Web_Mapping_Dashboard/
+│   ├── README.md
+│   ├── app_streamlit.py
+│   └── data/
+│
+├── Day4_Cloud_GIS_AWS_PostGIS/
+│   ├── README.md
+│   └── deployment_notes.md
+│
+├── Day5_CI_CD_Docker_Streamlit/
+│   ├── README.md
+│   ├── Dockerfile
+│   ├── requirements.txt
+│   └── .github/
+│       └── workflows/
+│           └── deploy.yml
+│
+└── Day6_FME_Python_Automation/
+    ├── README.md
+    ├── fme_workspace.fmwt
+    ├── transformers_used.txt
+    ├── sample_data/
+    │   ├── parcels.shp
+    │   └── zoning.shp
+    └── python_scripts/
+        └── attribute_editor.py
+```
 ---
 
 ## 📣 Contact & Showcase
