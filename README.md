@@ -15,7 +15,7 @@ Welcome to my **6-day portfolio project**, where I showcase hands-on projects in
 | 1   | Advanced Spatial SQL                         | PostGIS joins, functions, triggers|
 | 2   | Python for Geospatial ETL                    | Batch raster + shapefile upload   |
 | 3   | Web Mapping Dashboard                        | Streamlit + Leafmap + widgets     |
-| 4   | Cloud GIS Deployment                         | PostGIS on AWS + Streamlit deploy |
+| 4   | Cloud GIS Deployment                         | Static Database + Streamlit deploy |
 | 5   | CI/CD with Docker & GitHub Actions           | App containerization & automation |
 | 6   | FME + Python Spatial Automation              | Hybrid workflow with PythonCaller |
 
@@ -26,7 +26,7 @@ Welcome to my **6-day portfolio project**, where I showcase hands-on projects in
 - PostGIS, QGIS, FME Form
 - Leafmap, Streamlit, Folium, Kepler.gl
 - Sentinel-2, Landsat 9, OpenStreetMap
-- AWS, Hugging Face Spaces
+- Streamlit Cloud
 
 ---
 
