@@ -3,7 +3,7 @@
 This repository showcases my geospatial data automation skills across three specialized workflows using:
 - PyQGIS + PostGIS (open-source GIS + spatial DB)
 - FME + Python (graphical ETL + scripting)
-- ArcPy (ArcGIS Pro scripting)
+- ArcPy (ArcGIS Pro scripting - Planned)
 
 Each mini-project highlights a specific automation strategy that reflects my capabilities in:
 - Batch processing
