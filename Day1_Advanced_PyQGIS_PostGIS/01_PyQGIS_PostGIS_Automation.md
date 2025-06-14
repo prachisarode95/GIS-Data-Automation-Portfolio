@@ -1,70 +1,85 @@
-# 🔄 PyQGIS + PostGIS Automation
+# 🛰️ Enterprise-Ready Spatial Data Pipeline using PyQGIS + PostGIS
 
-This project demonstrates how to automate spatial data ingestion from local vector files into a PostGIS database using PyQGIS and Python. It simulates a typical enterprise GIS data pipeline, highlighting skills in spatial database integration, batch uploads, and project reproducibility.
-
----
-
-## 🧰 Tools & Technologies
-
-- QGIS 3.x (with Python console)
-- PostgreSQL + PostGIS (extension)
-- PyQGIS API
-- psycopg2 (for Python-PostGIS connection)
-- Shapefile, GeoJSON (input data)
+This project simulates an enterprise-level spatial data ingestion pipeline using **PyQGIS** and **PostGIS**. It automates the validation, transformation, database upload, and visualization of multi-source GIS data.
 
 ---
 
-## 📁 Folder Structure
+## 🎯 Objective
 
-| Folder | Purpose |
-|--------|---------|
-| scripts/ | Automation scripts |
-| db/ | PostGIS schema setup + connection notes |
-| data/ | Sample shapefiles or geojson |
-| outputs/ | Logs and QGIS output |
+- Validate incoming vector layers (schema + geometry)
+- Upload features to a structured PostGIS schema
+- Apply standard styling in QGIS
+- Save the styled `.qgz` project and map snapshots
+- Log processing steps and errors
+---
+
+## 📊 Technologies Used
+
+| Component | Tool |
+|----------|------|
+| GIS Framework | QGIS + PyQGIS |
+| Database | PostgreSQL + PostGIS |
+| Scripting | Python (PyQGIS + psycopg2) |
+| Logging | CSV reports |
+
+---
+
+## 🔄 Workflow Steps
+
+1. Validate schema: fields, CRS (EPSG:4326), geometry
+2. Clean and simplify geometry (optional)
+3. Insert into structured PostGIS schema
+4. Apply SLD/QLR style using PyQGIS
+5. Save `.qgz` project + map snapshot
+6. Log stats to CSV
+---
+
+## 📂 Folder Structure
 
 ```
-01_PyQGIS_PostGIS_Automation/
+02_PyQGIS_PostGIS_Automation_Advanced/
 ├── README.md
 ├── scripts/
-│   ├── pyqgis_layer_loader.py
-│   ├── postgis_uploader.py
+│   ├── validate_and_load.py
+│   ├── style_applier.py
+│   ├── postgis_schema.sql
 │   └── config.py
 ├── db/
-│   ├── postgis_schema.sql
-│   └── connection_setup.md
+│   ├── pg_connection_setup.md
+│   └── sample_log.csv
+├── qgis_project/
+│   └── planning_data.qgz
 ├── data/
 │   ├── landuse.geojson
 │   └── roads.shp
-└── outputs/
-    ├── uploaded_log.txt
-    └── qgis_project.qgz
+├── outputs/
+│   ├── logs/
+│   │   └── upload_report.csv
+│   └── snapshots/
+│       └── landuse_map.png
 ```
 ---
 
-## 🚀 Workflow Steps
+## 🗂 Output
 
-1. Load vector layers into QGIS using PyQGIS
-2. Transform CRS if needed (EPSG:4326)
-3. Upload vector layers to PostGIS using psycopg2
-4. Log results and errors
-5. Save QGIS project to outputs
-
+- Tables(csv): `planning.landuse`, `planning.roads`
+- Project: `planning_data.qgz` (with styled layers)
+- Snapshot: `landuse_map.png`
 ---
 
-## 📸 Outputs
+## 🔗 Data Sources
 
-Uploaded tables:
-- `public.landuse`
-- `public.roads`
+- Open Data Toronto
+- OSM GeoJSON exports
+- Natural Earth shapefiles
+---
 
-QGIS Project:
-- `outputs/qgis_project.qgz` with live DB layers
+## 💼 Real-World Value
 
-> Add screenshots of:
-- QGIS project with PostGIS layers
-- Script outputs and logs
-
+Demonstrates your capability to:
+- Build repeatable, scalable geospatial pipelines
+- Automate integration between QGIS and PostGIS
+- Align with enterprise-grade workflows
 ---
 
 ## 🔗 Resources
