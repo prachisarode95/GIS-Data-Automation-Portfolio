@@ -1,87 +1,103 @@
-# 🛠 Module 2: FME + Python Automation
+# 🔄 FME-Based Spatial Data Automation (In Progress)
 
-This project showcases how to integrate Python scripts within FME workflows to perform automated classification and attribute editing. It simulates a typical parcel classification task in a land management system.
+This project showcases automation of multi-format spatial data transformation using **FME Workbench**, enhanced with embedded **Python scripts via the PythonCaller transformer**. It simulates a robust ETL pipeline built for urban planning datasets, supporting data validation, classification, and logging.
 
 ---
 
 ## 🎯 Objective
 
-Use the `PythonCaller` transformer in FME Form to:
-- Classify parcels based on area
-- Add custom attributes
-- Export the results to a new Shapefile
+- Read and transform spatial datasets (SHP, GeoJSON, GDB)
+- Perform attribute-based filtering and schema standardization
+- Classify parcel features based on area
+- Integrate embedded Python to create custom reports and tagging
+- Export final output for QA and visualization
 
 ---
 
-## 🧰 Tools & Technologies
+## 🧰 Tools Used
 
-| Tool       | Purpose                               |
-|------------|---------------------------------------|
-| FME Form   | Spatial ETL & visual automation       |
-| Python 3.x | Embedded logic via PythonCaller       |
-| Shapefile  | Input/output format                   |
+| Tool         | Purpose |
+|--------------|---------|
+| FME Form     | Visual ETL pipeline design |
+| PythonCaller | Custom logic inside FME |
+| SHP, GeoJSON, GDB | Multi-format inputs |
+| AttributeManager, AreaCalculator, Tester | Core transformers |
+| Logger       | QA output & reporting |
 
 ---
 
-## 📁 Folder Structure
+## 🔁 Workflow
 
-| Folder | Description |
-|--------|-------------|
-| sample_data/ | Input shapefiles |
-| python_scripts/ | Custom Python logic for automation |
-| outputs/ | Classified output shapefile |
-| screenshots/ | Workspace visuals for README |
+1. **Read Input Data**
+   - Accepts SHP, GDB, or GeoJSON files
+2. **Transform & Validate**
+   - Calculate area
+   - Classify parcels: `Small`, `Medium`, `Large`
+   - Clean attributes with `AttributeManager`
+3. **Apply Python Logic**
+   - Use `PythonCaller` to assign tags and write reports
+   - Example: `"processed_by" = "FME+Python"`
+4. **Export Final Outputs**
+   - Clean shapefile output
+   - Summary log using Logger or CSV writer
+
+---
+
+## 📁 Project Files
 
 ```
 03_FME_Python_Automation/
-├── README.md
 ├── fme_workspace.fmwt
 ├── sample_data/
-│   ├── parcels.shp
-│   └── zoning_areas.shp
+│ ├── parcels.shp
+│ └── zoning_areas.shp
 ├── python_scripts/
-│   └── attribute_classifier.py
+│ └── attribute_classifier.py
+├── outputs/
+│ └── classified_parcels.shp
 ├── screenshots/
-│   ├── workspace_layout.png
-│   └── pythoncaller_config.png
-└── outputs/
-    └── classified_parcels.shp
+│ ├── workspace_layout.png
+│ └── pythoncaller_config.png
 ```
 ---
 
-## 🔁 Workflow Steps
+## 🐍 PythonCaller Example
 
-1. Read `parcels.shp` as input
-2. Use `AreaCalculator` to generate area attribute
-3. Pass features to `PythonCaller`:
-    - Classify parcels as Small, Medium, or Large
-    - Add custom tags (e.g., `"processed_by": "FME+Python"`)
-4. Clean attributes with `AttributeManager`
-5. Export `classified_parcels.shp`
+```python
+def fme_feature(feature):
+    area = float(feature.getAttribute('area'))
+    if area > 2000:
+        feature.setAttribute('category', 'Large')
+    elif area > 1000:
+        feature.setAttribute('category', 'Medium')
+    else:
+        feature.setAttribute('category', 'Small')
+    feature.setAttribute('processed_by', 'FME+Python')
+```
+---
+
+## ✅ Output Highlights
+
+- classified_parcels.shp with area-based categories
+- Summary logs generated via PythonCaller or Logger
+- Modular workspace for reuse in multiple projects
+---
+
+## 💼 What It Demonstrates
+
+- GUI + code hybrid ETL design
+- Real-world classification + attribute handling
+- Working knowledge of embedded Python inside FME
+- QA-focused automation for spatial data prep
+---
+
+## 🚧 Status
+In Progress – Will expand to multi-layer validation + reporting in CSV/PDF via Python.
 
 ---
 
-✅ Output
-Final output: outputs/classified_parcels.shp
+## 📷 Screenshot Previews (To Add)
 
-Fields: id, area, category, tag
-
-Viewable in QGIS or any GIS viewer
-
-📸 Screenshots
-workspace_layout.png: Full transformer layout
-
-pythoncaller_config.png: Embedded script in PythonCaller
-
-
-💡 Project Extension
-Zoning Compliance Check:
-
-Add zoning_areas.shp as secondary input
-
-Use SpatialFilter to tag parcels inside non-compliant zones
-
-Add compliance = "Yes"/"No" using another PythonCaller
-
-This turns your pipeline into a compliance checker
-
+- Workspace layout with transformers
+- PythonCaller with script
+- Output visual in QGIS
