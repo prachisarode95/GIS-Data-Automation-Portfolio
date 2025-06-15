@@ -1,6 +1,6 @@
-# 🛰️ Enterprise-Ready Spatial Data Pipeline using PyQGIS + PostGIS
+# 🛰️ Enterprise-Grade Spatial Data Validation and Visualization Pipeline using PyQGIS + PostGIS
 
-This project simulates an enterprise-level spatial data ingestion pipeline using **PyQGIS** and **PostGIS**. It automates the validation, transformation, database upload, and visualization of multi-source GIS data.
+This advanced automation project uses Python and PyQGIS to validate, upload, visualize, and report geospatial data workflows into a structured PostGIS environment. Built for real-world QA/QC, schema enforcement, and multi-format outputs. This project mimics the ingestion and quality assurance pipeline used by urban planning departments and consulting firms. The scripts simulate schema enforcement, geometry correction, database automation, and cartographic output for large-scale geospatial operations.
 
 ---
 
@@ -37,24 +37,28 @@ This project simulates an enterprise-level spatial data ingestion pipeline using
 ## 📂 Folder Structure
 
 ```
-02_PyQGIS_PostGIS_Automation_Advanced/
+01_PyQGIS_PostGIS_Advanced/
 ├── README.md
 ├── scripts/
-│   ├── validate_and_load.py
-│   ├── style_applier.py
-│   ├── postgis_schema.sql
+│   ├── 1_validate_schema.py
+│   ├── 2_upload_to_postgis.py
+│   ├── 3_apply_styles_and_export.py
+│   ├── 4_generate_summary_report.py
 │   └── config.py
 ├── db/
-│   ├── pg_connection_setup.md
-│   └── sample_log.csv
-├── qgis_project/
-│   └── planning_data.qgz
+│   ├── postgis_schema.sql
 ├── data/
 │   ├── landuse.geojson
-│   └── roads.shp
+│   ├── zoning.geojson
+├── styles/
+│   └── landuse_style.qlr
 ├── outputs/
 │   ├── logs/
-│   │   └── upload_report.csv
+│   │   └── upload_log.csv
+│   ├── reports/
+│   │   └── summary_report.html
+│   ├── qgis_project/
+│   │   └── planning_data.qgz
 │   └── snapshots/
 │       └── landuse_map.png
 ```
