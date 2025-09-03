@@ -1,10 +1,10 @@
-# 🔄 FME-Based Spatial Data Automation (In Progress)
+# FME-Based Spatial Data Automation (Planned)
 
 This project showcases automation of multi-format spatial data transformation using **FME Workbench**, enhanced with embedded **Python scripts via the PythonCaller transformer**. It simulates a robust ETL pipeline built for urban planning datasets, supporting data validation, classification, and logging.
 
 ---
 
-## 🎯 Objective
+## Objective
 
 - Read and transform spatial datasets (SHP, GeoJSON, GDB)
 - Perform attribute-based filtering and schema standardization
@@ -14,7 +14,7 @@ This project showcases automation of multi-format spatial data transformation us
 
 ---
 
-## 🧰 Tools Used
+## Tools Be Used
 
 | Tool         | Purpose |
 |--------------|---------|
@@ -26,7 +26,7 @@ This project showcases automation of multi-format spatial data transformation us
 
 ---
 
-## 🔁 Workflow
+## Workflow
 
 1. **Read Input Data**
    - Accepts SHP, GDB, or GeoJSON files
@@ -43,47 +43,14 @@ This project showcases automation of multi-format spatial data transformation us
 
 ---
 
-## 📁 Project Files
-
-```
-03_FME_Python_Automation/
-├── fme_workspace.fmwt
-├── sample_data/
-│ ├── parcels.shp
-│ └── zoning_areas.shp
-├── python_scripts/
-│ └── attribute_classifier.py
-├── outputs/
-│ └── classified_parcels.shp
-├── screenshots/
-│ ├── workspace_layout.png
-│ └── pythoncaller_config.png
-```
----
-
-## 🐍 PythonCaller Example
-
-```python
-def fme_feature(feature):
-    area = float(feature.getAttribute('area'))
-    if area > 2000:
-        feature.setAttribute('category', 'Large')
-    elif area > 1000:
-        feature.setAttribute('category', 'Medium')
-    else:
-        feature.setAttribute('category', 'Small')
-    feature.setAttribute('processed_by', 'FME+Python')
-```
----
-
-## ✅ Output Highlights
+## Output Highlights
 
 - classified_parcels.shp with area-based categories
 - Summary logs generated via PythonCaller or Logger
 - Modular workspace for reuse in multiple projects
 ---
 
-## 💼 What It Demonstrates
+## What It Demonstrates
 
 - GUI + code hybrid ETL design
 - Real-world classification + attribute handling
@@ -91,12 +58,7 @@ def fme_feature(feature):
 - QA-focused automation for spatial data prep
 ---
 
-## 🚧 Status
-In Progress – Will expand to multi-layer validation + reporting in CSV/PDF via Python.
-
----
-
-## 📷 Screenshot Previews (To Add)
+## Screenshot Previews (To Add)
 
 - Workspace layout with transformers
 - PythonCaller with script
